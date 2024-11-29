@@ -135,6 +135,7 @@ m_fires
 We can plot data but what else can we do to improve map readability and functionality?
 
 Leaflet provides many options for this. In this example we'll introduce some customization options using our previous example as a baseline.
+
 **Colours**
 
 - Just like before, we can colour-code our fires. The dataset provides a simple cause column for each fire which includes either "Person" or "Lightning". Like before, we can create a colour palette using `colorFactor()` to colour in each of these options. 
@@ -175,7 +176,7 @@ m_fires2 <- leaflet(fires_proj) %>%
 m_fires2
 ```
 ## Export your map
-To export your map as an html file you can use the `htmlwidgets` library. This simple code with export your map as a html file allowing you to open it in a browser. Use the `saveWidgets(<map>,file=<filepath>)` function.
+To export your map as an html file you can use the `htmlwidgets` library. This simple code will export your map as a html file allowing you to open it in a browser. Use the `saveWidgets(<map>,file=<filepath>)` function.
 ```r
 library(htmlwidgets)
 saveWidget(m, file="maps/m.html") #save map m to maps/m.html
