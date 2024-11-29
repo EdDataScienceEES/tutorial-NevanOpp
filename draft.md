@@ -1,5 +1,4 @@
-
-# Tutorial
+# Leaflet - Interactive Web Maps in R
 ##  Tutorial Aims
 This tutorial will teach you how to create interactive web-based maps using a package called 'Leaflet'. Leaflet is based in the web scripting language JavaScript and produces interactive maps that can be displayed in the browser!
 
