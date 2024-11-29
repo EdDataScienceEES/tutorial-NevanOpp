@@ -203,4 +203,4 @@ server <- function(input, output, session) {
 shinyApp(ui = ui, server = server)
 ```
 
-Now when you want to run your map simply set `currentMap <- <map_name>` and then run the line `shinyApp(ui = ui, server = server)`. For example, I would do `currentMap <- m_fires2` then `shinyApp(ui = ui, server = server)`. This will launch a web-app with my leaflet map.
+Now when you want to run your map simply set `currentMap <- <map_name>` and then run the line `shinyApp(ui = ui, server = server)`. For example, if using the code from the tutorial, you would do `currentMap <- m_fires2` then `shinyApp(ui = ui, server = server)`. This will launch a web-app with the leaflet map.
