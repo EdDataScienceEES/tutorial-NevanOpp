@@ -10,8 +10,7 @@ This tutorial will take you through basic five steps to help familiarize yoursel
 4. Adding data to your map
 5. Customizing your map
 --------------------------
-Note: Installation of R and RStudio is already assumed as well as basic knowledge of R. If you feel you need a refresher please refer to other coding club tutorials.
-  
+Note: Github doesn't allow HTML to be embedded in their markdown files. I have provided images instead, if you click on the image it will take you to a webpage displaying the proper outputted interactive map. Hopes this helps!
 
 <a  name="section1"></a>
 ## Getting Started
@@ -37,7 +36,8 @@ m = leaflet() %>%
   setView(-120, 55, zoom = 5)
 m # Run our map
 ```
-(show map here)
+[![Map Image](maps/m1.png "Map 1")](https://rawcdn.githack.com/EdDataScienceEES/tutorial-NevanOpp/9ef301a62d99a7b9a21b469e89dafb65b58c6e27/maps/m1.html)
+
 ### My map is blank, what happened?
 Usually the map appears in the 'Viewer' section of R. Sometimes this doesn't happen and the screen is just blank. If this happens there is a simple solution: Use the "show in new window" button at the top _Viewer_ tab of RStudio. This will open the map in your default browser allowing you to interact with it there. 
 
@@ -61,6 +61,7 @@ What's the point of having a map if there is no data on it? Let's add some point
 m <- m %>% addMarkers(lng = -123.1, lat = 49.3)
 m
 ```
+[![Map Image](maps/m2.png "Map with 1 Marker")](https://rawcdn.githack.com/EdDataScienceEES/tutorial-NevanOpp/9ef301a62d99a7b9a21b469e89dafb65b58c6e27/maps/m2.html)
 
 That's great but adding each city manually would be a lot of work. Luckily we can use pre-made databases for our maps too. For this tutorial we are using the <a  href="https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf"  target="_blank">Canada Cities Database</a> provided by Simply Maps. Add the data to your 'data' folder in the same directory as the script.
 
@@ -79,7 +80,9 @@ m_city <- leaflet() %>%
              #create labels when hovering or clicking on points
              label=~city) 
 m_city #display map
-``` 
+
+```
+[![Map Image](maps/m_city1.png)](https://rawcdn.githack.com/EdDataScienceEES/tutorial-NevanOpp/9ef301a62d99a7b9a21b469e89dafb65b58c6e27/maps/m_city1.html)
 This is great but there are so many cities we can't tell them apart! Let's add some symbology to make the map a bit easier to read. We will scale the size of city's based on their population and also colour them by province. 
 To do the colouring, we create a custom colour palette. Since our variables are categorical we use the `colorFactor()` function to do this.
 
@@ -98,7 +101,7 @@ m_city_colours <- leaflet() %>%
   )
 m_city_colours
 ```
-
+[![Map Image](maps/m_city2.png)](https://rawcdn.githack.com/EdDataScienceEES/tutorial-NevanOpp/9ef301a62d99a7b9a21b469e89dafb65b58c6e27/maps/m_city2.html)
 
 <a  name="section1"></a>
 ###  Polygons
@@ -132,7 +135,7 @@ m_fires <- leaflet() %>%
               label = ~label) #add a label for each polygon
 m_fires
  ```
-
+[![Map Image](maps/m_fires1.png)](https://rawcdn.githack.com/EdDataScienceEES/tutorial-NevanOpp/9ef301a62d99a7b9a21b469e89dafb65b58c6e27/maps/m_fires1.html)
 ##  Customization
 We can plot data but what else can we do to improve map readability and functionality?
 
@@ -177,6 +180,7 @@ m_fires2 <- leaflet(fires_proj) %>%
               options = scaleBarOptions(imperial = FALSE))
 m_fires2
 ```
+[![Map Image](maps/m_fires2.png)](https://rawcdn.githack.com/EdDataScienceEES/tutorial-NevanOpp/9ef301a62d99a7b9a21b469e89dafb65b58c6e27/maps/m_fires2.html)
 ## Export your map
 To export your map as an html file you can use the `htmlwidgets` library. This simple code will export your map as a html file allowing you to open it in a browser. Use the `saveWidgets(<map>,file=<filepath>)` function.
 ```r
