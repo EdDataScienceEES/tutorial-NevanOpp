@@ -159,9 +159,12 @@ Leaflet provides many options for this. In this example we'll introduce some cus
 
 Adding them all together we can create a more detailed and explanatory map!
 ```r
+#create label that combines fire size and year started into 1 string.
+fires_proj <- fires_proj %>% 
+  mutate(label = paste("Fire Size:", FIRE_SIZE_HECTARES, "Hectares |","Year Started:", FIRE_YEAR))
 #create colour palette
 fires_palette <- colorFactor(c("blue","red"),domain = c("Lightning","Person"))
-
+#create map
 m_fires2 <- leaflet(fires_proj) %>% 
   addTiles() %>% 
   setView(-120, 55, zoom = 5) %>%
@@ -187,3 +190,28 @@ To export your map as an html file you can use the `htmlwidgets` library. This s
 library(htmlwidgets)
 saveWidget(m, file="maps/m.html") #save map m to maps/m.html
 ```
+## Using Shiny for dynamic development
+Shiny is a web-app hosting library that allows you to host your map on a local server on your computer. It is simple to set up and should just launch out of R.
+
+Copy and run the code below feel free to change the size of the map. Make sure you have Shiny installed via `install.packages('shiny')`
+```r
+library(shiny)
+
+currentMap <- m #variable which will hold your map data
+#ui for webpage
+ui <- fluidPage(
+  titlePanel("Interactive Leaflet Map"),
+  mainPanel(
+    leafletOutput("map",height=750,width=1200)
+  )
+)
+#backend server which renders a leaflet map
+server <- function(input, output, session) {
+  output$map <- renderLeaflet(currentMap)
+}
+
+#run this to get output (do this each time you make a new map)
+shinyApp(ui = ui, server = server)
+```
+
+Now when you want to run your map simply set `currentMap <- <map_name>` and then run the line `shinyApp(ui = ui, server = server)`. For example, I would do `currentMap <- m_fires2` then `shinyApp(ui = ui, server = server)`. This will launch a web-app with my leaflet map.
