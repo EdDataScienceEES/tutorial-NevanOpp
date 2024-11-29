@@ -104,7 +104,7 @@ m_city_colours
 ###  Polygons
 We can also visualize other spatial data such as lines and polygons. Let's put some boundaries on a map!
 
-We'll be using a historical fires dataset for the province of British Columbia. This dataset, provides polygon data for past fires in the province. You can download this data by <a href="https://catalogue.data.gov.bc.ca/dataset/bc-wildfire-fire-perimeters-historical"> requesting it from the BC government </a> or use this <a href="https://drive.google.com/file/d/1WjeCmIZ7es5Icq1xYaAckc4T-GJw8_3J/view?usp=sharing" google drive link </a> and add it to your 'data' folder.
+We'll be using a historical fires dataset for the province of British Columbia. This dataset, provides polygon data for past fires in the province. You can download this data by <a href="https://catalogue.data.gov.bc.ca/dataset/bc-wildfire-fire-perimeters-historical"> requesting it from the BC government </a> or use this <a href="https://drive.google.com/file/d/1WjeCmIZ7es5Icq1xYaAckc4T-GJw8_3J/view?usp=sharing"> google drive link </a> and add it to your 'data' folder.
 
 First lets transform the data so that it can be worked with. Don't worry if you don't understand everything going on here, what's most important to remember is that we need to project our data into the WSG 84 coordinate system. This is done via the `st_transform()`, leaflet only recognizes dataframes with this projection and will not work with others. We've also created a label for each fire which will be used later.
 
