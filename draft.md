@@ -1,3 +1,4 @@
+
 # Tutorial
 ##  Tutorial Aims
 This tutorial will teach you how to create interactive web-based maps using a package called 'Leaflet'. Leaflet is based in the web scripting language JavaScript and produces interactive maps that can be displayed in the browser!
@@ -172,4 +173,10 @@ m_fires2 <- leaflet(fires_proj) %>%
   addScaleBar(position = "topright",
               options = scaleBarOptions(imperial = FALSE))
 m_fires2
+```
+## Export your map
+To export your map as an html file you can use the `htmlwidgets` library. This simple code with export your map as a html file allowing you to open it in a browser. Use the `saveWidgets(<map>,file=<filepath>)` function.
+```r
+library(htmlwidgets)
+saveWidget(m, file="maps/m.html") #save map m to maps/m.html
 ```
