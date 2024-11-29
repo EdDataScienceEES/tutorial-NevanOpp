@@ -1,6 +1,6 @@
 # Leaflet - Interactive Web Maps in R
 ##  Tutorial Aims
-This tutorial will teach you how to create interactive web-based maps using a package called 'Leaflet'. Leaflet is based in the web scripting language JavaScript and produces interactive maps that can be displayed in the browser!
+This tutorial will teach you how to create interactive web-based maps using <a href="https://rstudio.github.io/leaflet/"> Leaflet</a>. Leaflet is based in the web scripting language JavaScript and produces interactive maps that can be displayed in the browser!
 
 This tutorial will take you through basic five steps to help familiarize yourself with the package.
 1. How to install leaflet
@@ -14,7 +14,7 @@ Note: Github doesn't allow HTML to be embedded in their markdown files. I have p
 <a  name="section1"></a>
 ## Getting Started
 ### Installing Leaflet
-To get started please open RStudio and install the Leaflet packages. You can do this by running the command `install.packages('leaflet')` in R. Then when we need to reference it we write`library(leaflet)` .
+To get started please open RStudio and install the Leaflet package. You can do this by running the command `install.packages('leaflet')` in R. Then when we need to reference it we write`library(leaflet)` .
 ### Creating your First Map
 Next we can use the leaflet package in R to create a basic map. Leaflet uses a pipe structure similar to the common `dplyr` package.
 
@@ -40,17 +40,7 @@ m # Run our map
 ### My map is blank, what happened?
 Usually the map appears in the 'Viewer' section of R. Sometimes this doesn't happen and the screen is just blank. If this happens there is a simple solution: Use the "show in new window" button at the top _Viewer_ tab of RStudio. This will open the map in your default browser allowing you to interact with it there. 
 
-
-
-(add screenshots here)
-
-If it is still blank, using the package _Shiny_ is a more permanent solution. Please see the **Shiny tutorial section at the end of the page**
-
-
-
-<a  name="section2"></a>
-
-  
+If it is still blank, using the package <a href="https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/"> _Shiny_ </a> is a more permanent solution. Please see the **Shiny tutorial section at the bottom of the page**
 
 ## Adding Data To the Map
 ### Points
