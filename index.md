@@ -9,8 +9,6 @@ This tutorial will take you through basic five steps to help familiarize yoursel
 4. Adding data to your map
 5. Customizing your map
 
---------------------------
-
 Note: Github doesn't allow HTML to be embedded in their markdown files. I have provided images instead, if you click on the image it will take you to a webpage displaying the proper outputted interactive map. Hopes this helps!
 
 <a  name="section1"></a>
