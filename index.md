@@ -64,7 +64,7 @@ m_city <- leaflet() %>%
   addTiles() %>% 
   setView(-120, 55, zoom = 5) %>%
   addMarkers(data = cities,
-		     #use the 'lng' and 'lat' columns to demark locations
+             #use the 'lng' and 'lat' columns to demark locations
              lng = ~lng, lat = ~lat, 
              #create labels when hovering or clicking on points
              label=~city) 
